@@ -4,6 +4,7 @@
 #include <unordered_set>
 #include <Windows.h>
 #include <string>
+#include<chrono>
 
 using namespace std;
 
@@ -479,9 +480,9 @@ int main()
         Initial configuration of puzzle.
     */
     vector<vector<int>> initial = {
-        {6, 3, 1},
-        {8, 7, 4},
-        {0, 2, 5}
+        {2, 3, 8},
+        {1, 6, 4},
+        {7, 0, 5}
     };
 
     /*
@@ -557,6 +558,13 @@ int main()
     }
     else
     {
+        auto start_time = chrono::high_resolution_clock::now();
+
         bfs(start, goal, step_by_step);
+
+        auto end_time = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+
+        cout << "\n\nBFS Execution time: " << duration.count() << " ms" << endl;
     }
 }
