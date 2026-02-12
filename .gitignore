@@ -1,0 +1,17 @@
+# Compiled object files
+*.obj
+*.o
+
+# Executable files
+*.exe
+*.out
+
+# Build folders
+Debug/
+Release/
+build/
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.sln
